@@ -1,4 +1,6 @@
 const { TextToArray } = require('../helpers')
+const fs = require("fs");
+const path = require("path");
 
 const challengeOne = (input) => {
     return null
@@ -12,3 +14,16 @@ module.exports = {
     challengeOne,
     challengeTwo
 }
+
+const input = fs.readFileSync(path.join(__dirname, '/input.txt'), { encoding: 'utf8'})
+
+console.log(`The answer to challenge one is: ${challengeOne(input)}`)
+console.log(`The answer to challenge two is: ${challengeTwo(input)}`)
+
+console.log(`
+|,\\/,| |[_' |[_]) |[_]) \\\\//
+||\\/|| |[_, ||'\\, ||'\\,  ||
+___ __ __ ____  __  __  ____  _  _    __    __
+// ' |[_]| |[_]) || ((_' '||' |,\\/,|  //\\\\  ((_'
+\\\\_, |[']| ||'\\, || ,_))  ||  ||\\/|| //\`\`\\\\ ,_))
+`)
